@@ -1,0 +1,7 @@
+{
+  "projectKey": "_PROJECT",
+  "rclass" : "local",
+  "packageType": "maven",
+  "repoLayoutRef" : "maven-2-default",  
+  "xrayIndex" : true
+}

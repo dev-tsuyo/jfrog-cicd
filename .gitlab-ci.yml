@@ -1,0 +1,15 @@
+image: maven:3-jdk-11
+
+before_script:
+  - curl -fL https://install-cli.jfrog.io | sh
+  - jf c add artifactory --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASS --interactive=false
+  - jf c s
+
+build:
+  stage: build
+  script:
+    - jf mvn "clean package"
+    - jf mvn deploy --project=hello --build-name=hello-maven-gitlab --build-number=$CI_JOB_ID
+    - jf rt bce --project=hello hello-maven-gitlab $CI_JOB_ID
+    - jf rt bag --project=hello hello-maven-gitlab $CI_JOB_ID .
+    - jf rt bp --project=hello hello-maven-gitlab $CI_JOB_ID
