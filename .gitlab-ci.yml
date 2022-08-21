@@ -1,3 +1,6 @@
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
 image: maven:3-jdk-11
 
 cache:
