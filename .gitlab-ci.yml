@@ -6,7 +6,7 @@ cache:
 
 before_script:
   - curl -fL https://install-cli.jfrog.io | sh
-  - jf c add artifactory --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASS --interactive=false
+  - jf c add artifactory --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
   - jf c s
 
 build:
