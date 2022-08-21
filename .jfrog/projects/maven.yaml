@@ -1,0 +1,10 @@
+version: 1
+type: maven
+resolver:
+  serverId: artifactory
+  snapshotRepo: hello-maven
+  releaseRepo: hello-maven
+deployer:
+  serverId: artifactory
+  snapshotRepo: hello-maven
+  releaseRepo: hello-maven
