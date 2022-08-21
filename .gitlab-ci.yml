@@ -11,6 +11,7 @@ before_script:
   - curl -fL https://install-cli.jfrog.io | sh
   - jf c add artifactory --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
   - jf c s
+  - mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false
 
 build:
   stage: build
