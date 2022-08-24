@@ -17,7 +17,7 @@ build:
   stage: build
   script:
     - jf mvn clean package
-    - jf mvn deploy --project=hello --build-name=hello-maven-gitlab --build-number=$CI_JOB_ID
-    - jf rt bce --project=hello hello-maven-gitlab $CI_JOB_ID
-    - jf rt bag --project=hello hello-maven-gitlab $CI_JOB_ID .
-    - jf rt bp --project=hello hello-maven-gitlab $CI_JOB_ID
+    - jf mvn deploy --build-name=hello-maven-gitlab --build-number=$CI_JOB_ID
+    - jf rt bce hello-maven-gitlab $CI_JOB_ID
+    - jf rt bag hello-maven-gitlab $CI_JOB_ID .
+    - jf rt bp hello-maven-gitlab $CI_JOB_ID
