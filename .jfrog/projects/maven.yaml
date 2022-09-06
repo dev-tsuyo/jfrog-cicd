@@ -2,9 +2,9 @@ version: 1
 type: maven
 resolver:
   serverId: artifactory
-  snapshotRepo: hello-maven
-  releaseRepo: hello-maven
+  snapshotRepo: hello-maven-gitlab
+  releaseRepo: hello-maven-gitlab
 deployer:
   serverId: artifactory
-  snapshotRepo: hello-maven
-  releaseRepo: hello-maven
+  snapshotRepo: hello-maven-gitlab
+  releaseRepo: hello-maven-gitlab
