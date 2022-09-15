@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v2
         env:
@@ -23,9 +26,6 @@ jobs:
           distribution: 'adopt'
           cache: 'maven'
           
-      - name: Check out repository code
-        uses: actions/checkout@v3
-
       - run: jf mvnc --repo-deploy-releases=${{ secrets.JF_REPO_NAME }} --repo-deploy-snapshots=${{ secrets.JF_REPO_NAME }} --repo-resolve-releases=${{ secrets.JF_REPO_NAME }} --repo-resolve-snapshots=${{ secrets.JF_REPO_NAME }}
       - run: jf mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false
 
