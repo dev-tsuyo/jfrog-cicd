@@ -1,4 +1,4 @@
-name: JFrog Maven Build
+name: github-maven-build
 
 on: [push]
 
@@ -20,7 +20,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'adopt'          
+          distribution: 'adopt'
+          cache: 'maven'
           
       - name: Check out repository code
         uses: actions/checkout@v3
